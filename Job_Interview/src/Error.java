@@ -73,37 +73,57 @@ public class Error {
 	{
 		if(num == 10)
 		{
-			rotator.title.append(rotator.title.toString().replace(rotator.head.description, ""));
+			
 			rotator.head = null;
 			
 			if(rotator.rear == null)
+			{
 				rotator = null;
+				return;
+			}
+			rotator.title.delete(0,rotator.title.length());
+			rotator.title.append(rotator.originalTitle).append(rotator.rear.description);
 		
 		}
 		else if(num == 11)
 		{
-			rotator.title.append(rotator.title.toString().replace(rotator.rear.description, ""));
+			
 			rotator.rear = null;
 			
 			if(rotator.head == null)
+			{
 				rotator = null;
+				return;
+			}
+			rotator.title.delete(0,rotator.title.length());
+			rotator.title.append(rotator.originalTitle).append(rotator.head.description);
 		}
 		else if(num == 12)
 		{
-			fuel.title.replace(fuel.left.description, "");
 			fuel.left = null;
 			
 			if(fuel.right == null)
+			{
 				fuel = null;
+				return;
+			}
+			fuel.title.delete(0,fuel.title.length());
+			fuel.title.append(fuel.originalTitle).append(fuel.right.description);
 
 		}
 		else if(num == 13)
 		{
-			fuel.title.replace(fuel.right.description, "");
+
 			fuel.right = null;
 			
 			if(fuel.left == null)
+			{
 				fuel = null;
+				return;
+			}
+			fuel.title.delete(0,fuel.title.length());
+			fuel.title.append(fuel.originalTitle).append(fuel.left.description);
+
 		}
 		else if(num == 14)
 			ins = null;
