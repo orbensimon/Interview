@@ -1,7 +1,9 @@
 
+
 public class Rotator {
 
 	public StringBuffer title = new StringBuffer ("Rotator: ");
+	public StringBuffer originalTitle = new StringBuffer("Rotator: ");
 	public String description = "";
 	public HeadRotator head;
 	public RearRotator rear;
@@ -17,11 +19,7 @@ public class Rotator {
 			
 			this.description = head.description;
 			title.append(description);
-			//if(rear != null)
-				//title += rear.description;
 		
-			
-				
 		}
 		else
 		{
@@ -30,8 +28,7 @@ public class Rotator {
 			
 			this.description = rear.description;
 			title.append(description);
-			//if(head != null)
-				//title += head.description;
+			
 		}
 		
 	}
