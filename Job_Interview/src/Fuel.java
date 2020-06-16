@@ -1,7 +1,9 @@
 
+
 public class Fuel {
 
-	public String title = "Fuel: ";
+	public StringBuffer title = new StringBuffer ("Fuel: ");
+	public StringBuffer originalTitle = new StringBuffer("Fuel: ");
 	public String description = "";
 	FuelLeft left;
 	FuelRight right;
@@ -16,7 +18,7 @@ public class Fuel {
 				left = new FuelLeft();
 			
 			this.description = left.description;
-			title += description;
+			title.append(description);
 				
 		}
 		else
@@ -25,13 +27,13 @@ public class Fuel {
 				right = new FuelRight();
 			
 			this.description = right.description;
-			title += description;
+			title.append(description);
 			
 		}
 		
 	}
 	public String toString()
 	{
-		return String.format(title);
+		return String.format(title.toString());
 	}
 }
